@@ -2,6 +2,7 @@ package com.pride.roomtest
 
 import android.database.Cursor
 import androidx.room.*
+import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 
 @Dao
@@ -13,7 +14,7 @@ interface NameDAO {
     fun findText(text : String) : Cursor
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertToDB(name: Name)
+    fun insertToDB(name: Name):Completable
 
     @Query("DELETE FROM TestName")
     fun clearDb()
