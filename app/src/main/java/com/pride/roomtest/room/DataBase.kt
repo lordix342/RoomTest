@@ -1,4 +1,4 @@
-package com.pride.roomtest
+package com.pride.roomtest.room
 
 import android.content.Context
 import androidx.room.Database
@@ -15,7 +15,7 @@ abstract class DataBase : RoomDatabase() {
         @Volatile
         private var INSTANCE : DataBase? = null
 
-        fun getDatabase(context: Context): DataBase{
+        fun getDatabase(context: Context): DataBase {
 
             val tempInstance = INSTANCE
             if(tempInstance != null){

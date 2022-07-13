@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.pride.roomtest.databinding.FragmentBlankBinding
+import com.pride.roomtest.room.Name
 
 class BlankFragment : Fragment() {
     private lateinit var binding : FragmentBlankBinding
@@ -36,7 +37,7 @@ class BlankFragment : Fragment() {
     private fun writeData() {
         val text = binding.editTextTextPersonName.text.toString()
         if (text.isNotEmpty()) {
-            val name = Name(null,text)
+            val name = Name(null, text, "asdf", "adgf", "dfsag", "argsa", "aergf")
             viewM.writeToDb(name)
         }
     }

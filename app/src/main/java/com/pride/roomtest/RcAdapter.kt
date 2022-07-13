@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pride.roomtest.databinding.ItemBinding
+import com.pride.roomtest.room.Name
 
 
 class RcAdapter : RecyclerView.Adapter<RcAdapter.ItemHolder>() {
@@ -17,7 +18,7 @@ class RcAdapter : RecyclerView.Adapter<RcAdapter.ItemHolder>() {
         private val binding = ItemBinding.bind(itemView)
         fun bind(name: Name) = with(binding) {
             textId.text = name.id.toString()
-            textName.text = name.text
+            textName.text = name.name
         }
     }
 

@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.pride.roomtest.room.DataBase
+import com.pride.roomtest.room.Name
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers.newThread
 import kotlinx.coroutines.launch
@@ -28,7 +30,7 @@ class ViewM(application: Application): AndroidViewModel(application) {
                 })
         }
     }
-    fun writeToDb(name:Name) {
+    fun writeToDb(name: Name) {
         viewModelScope.launch {
             dataBase.nameDao().insertToDB(name)
                 .subscribeOn(newThread())
